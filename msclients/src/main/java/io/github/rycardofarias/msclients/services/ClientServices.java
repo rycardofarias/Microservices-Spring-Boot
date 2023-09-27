@@ -4,6 +4,7 @@ import io.github.rycardofarias.msclients.entities.Client;
 import io.github.rycardofarias.msclients.repositories.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -13,6 +14,7 @@ public class ClientServices {
     @Autowired
     private ClientRepository clientRepository;
 
+    @Transactional
     public Client save(Client client){
         return clientRepository.save(client);
     }
